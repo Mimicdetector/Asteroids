@@ -7,10 +7,8 @@ from asteroid import Asteroid
 from asteroidfield import AsteroidField
 from shot import Shot
 def main():
-    # Initialize pygame
     pygame.init()
 
-    # Create the game window
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
     print("Starting Asteroids with pygame version:", pygame.version.ver)
@@ -30,10 +28,8 @@ def main():
     asteroid_field = AsteroidField()
     # Game loop
     while True:
-        # Log the game state
-        log_state()
+       log_state()
 
-        # Handle quit events
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
@@ -49,11 +45,10 @@ def main():
                     log_event("asteroid_split")
                     shot.kill()
                     asteroid.split()
-        # Fill the screen with black
         screen.fill("black")
         for obj in drawable:
             obj.draw(screen)
-        # Refresh the display
+
         
         pygame.display.flip()
 	
